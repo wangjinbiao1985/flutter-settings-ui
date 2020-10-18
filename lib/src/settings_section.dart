@@ -29,7 +29,7 @@ class SettingsSection extends AbstractSection {
     //   return androidSection(context);
     // else
     //  return androidSection(context);
-    //return iosSection();
+    return iosSection();
   }
 
   Widget iosSection() {
