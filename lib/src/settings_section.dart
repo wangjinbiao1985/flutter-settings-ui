@@ -28,7 +28,8 @@ class SettingsSection extends AbstractSection {
     // else if (platform.isAndroid)
     //   return androidSection(context);
     // else
-      return androidSection(context);
+    //  return androidSection(context);
+    return iosSection();
   }
 
   Widget iosSection() {
