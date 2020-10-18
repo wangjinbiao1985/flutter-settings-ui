@@ -22,13 +22,13 @@ class SettingsSection extends AbstractSection {
 
   @override
   Widget build(BuildContext context) {
-    final platform = Theme.of(context).platform;
-    if (platform.isIOS)
-      return iosSection();
-    else if (platform.isAndroid)
-      return androidSection(context);
-    else
-     return androidSection(context);
+    //final platform = Theme.of(context).platform;
+    // if (platform.isIOS)
+    //   return iosSection();
+    // else if (platform.isAndroid)
+    //   return androidSection(context);
+    // else
+    //  return androidSection(context);
     //return iosSection();
   }
 
@@ -39,32 +39,32 @@ class SettingsSection extends AbstractSection {
     );
   }
 
-  Widget androidSection(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      title == null
-          ? Container()
-          : Padding(
-              padding: const EdgeInsets.all(16),
-              child: Text(
-                title,
-                style: titleTextStyle ??
-                    TextStyle(
-                      color: Theme.of(context).accentColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-            ),
-      ListView.separated(
-        physics: NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: tiles.length,
-        separatorBuilder: (BuildContext context, int index) =>
-            Divider(height: 1),
-        itemBuilder: (BuildContext context, int index) {
-          return tiles[index];
-        },
-      ),
-      if (showBottomDivider) Divider(height: 1)
-    ]);
-  }
+  // Widget androidSection(BuildContext context) {
+  //   return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+  //     title == null
+  //         ? Container()
+  //         : Padding(
+  //             padding: const EdgeInsets.all(16),
+  //             child: Text(
+  //               title,
+  //               style: titleTextStyle ??
+  //                   TextStyle(
+  //                     color: Theme.of(context).accentColor,
+  //                     fontWeight: FontWeight.bold,
+  //                   ),
+  //             ),
+  //           ),
+  //     ListView.separated(
+  //       physics: NeverScrollableScrollPhysics(),
+  //       shrinkWrap: true,
+  //       itemCount: tiles.length,
+  //       separatorBuilder: (BuildContext context, int index) =>
+  //           Divider(height: 1),
+  //       itemBuilder: (BuildContext context, int index) {
+  //         return tiles[index];
+  //       },
+  //     ),
+  //     if (showBottomDivider) Divider(height: 1)
+  //   ]);
+  // }
 }

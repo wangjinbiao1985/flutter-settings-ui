@@ -56,12 +56,12 @@ class SettingsTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final platform = Theme.of(context).platform;
-    if (platform.isIOS) {
+    //final platform = Theme.of(context).platform;
+    //if (platform.isIOS) {
       return iosTile();
-    } else {
-      return androidTile();
-    }
+    //} else {
+      //return androidTile();
+    //}
   }
 
   Widget iosTile() {
@@ -95,27 +95,27 @@ class SettingsTile extends StatelessWidget {
     }
   }
 
-  Widget androidTile() {
-    if (_tileType == _SettingsTileType.switchTile) {
-      return SwitchListTile(
-        secondary: leading,
-        value: switchValue,
-        activeColor: switchActiveColor,
-        onChanged: enabled ? onToggle : null,
-        title: Text(title, style: titleTextStyle),
-        subtitle:
-            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
-      );
-    } else {
-      return ListTile(
-        title: Text(title, style: titleTextStyle),
-        subtitle:
-            subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
-        leading: leading,
-        enabled: enabled,
-        trailing: trailing,
-        onTap: onTap,
-      );
-    }
-  }
+  // Widget androidTile() {
+  //   if (_tileType == _SettingsTileType.switchTile) {
+  //     return SwitchListTile(
+  //       secondary: leading,
+  //       value: switchValue,
+  //       activeColor: switchActiveColor,
+  //       onChanged: enabled ? onToggle : null,
+  //       title: Text(title, style: titleTextStyle),
+  //       subtitle:
+  //           subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+  //     );
+  //   } else {
+  //     return ListTile(
+  //       title: Text(title, style: titleTextStyle),
+  //       subtitle:
+  //           subtitle != null ? Text(subtitle, style: subtitleTextStyle) : null,
+  //       leading: leading,
+  //       enabled: enabled,
+  //       trailing: trailing,
+  //       onTap: onTap,
+  //     );
+  //   }
+  // }
 }
