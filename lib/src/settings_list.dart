@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/src/abstract_section.dart';
 import 'package:settings_ui/src/colors.dart';
@@ -24,9 +25,11 @@ class SettingsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).brightness == Brightness.light
-          ? backgroundColor ?? lightBackgroundColor ?? backgroundGray
-          : backgroundColor ?? darkBackgroundColor ?? Colors.black,
+      color: CupertinoDynamicColor.withBrightness(
+          color: Colors.white, darkColor: Color(0xFF1C1C1E)),
+      // color: Theme.of(context).brightness == Brightness.light
+      //     ? backgroundColor ?? lightBackgroundColor ?? backgroundGray
+      //     : backgroundColor ?? darkBackgroundColor ?? Colors.black,
       child: ListView.builder(
         physics: physics,
         shrinkWrap: shrinkWrap,
