@@ -8,30 +8,30 @@ class SettingsList extends StatelessWidget {
   final bool shrinkWrap;
   final ScrollPhysics physics;
   final List<AbstractSection> sections;
-  // final Color backgroundColor;
-  // final Color lightBackgroundColor;
-  // final Color darkBackgroundColor;
+  final Color backgroundColor;
+  final Color lightBackgroundColor;
+  final Color darkBackgroundColor;
 
   const SettingsList({
     Key key,
     this.sections,
-    //his.backgroundColor,
+    this.backgroundColor,
     this.physics,
     this.shrinkWrap = false,
-    //this.lightBackgroundColor,
-    //this.darkBackgroundColor,
+    this.lightBackgroundColor,
+    this.darkBackgroundColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const CupertinoDynamicColor.withBrightness(
-        color: backgroundGray,
-        darkColor: Colors.black,
-      ).resolveFrom(context),
-      // color: Theme.of(context).brightness == Brightness.light
-      //     ? backgroundColor ?? lightBackgroundColor ?? backgroundGray
-      //     : backgroundColor ?? darkBackgroundColor ?? Colors.black,
+      // color: const CupertinoDynamicColor.withBrightness(
+      //   color: backgroundGray,
+      //   darkColor: Colors.black,
+      // ).resolveFrom(context),
+      color: Theme.of(context).brightness == Brightness.light
+          ? backgroundColor ?? lightBackgroundColor ?? backgroundGray
+          : backgroundColor ?? darkBackgroundColor ?? Colors.black,
       child: ListView.builder(
         physics: physics,
         shrinkWrap: shrinkWrap,

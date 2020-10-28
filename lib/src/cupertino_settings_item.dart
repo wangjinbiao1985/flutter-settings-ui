@@ -58,9 +58,7 @@ class CupertinoSettingsItemState extends State<CupertinoSettingsItem> {
   Widget build(BuildContext context) {
     _checked = widget.switchValue;
 
-    final ThemeData theme = Theme.of(context).copyWith(
-                brightness: MediaQuery.platformBrightnessOf(context),
-              );
+    final ThemeData theme = Theme.of(context);
     final ListTileTheme tileTheme = ListTileTheme.of(context);
     IconThemeData iconThemeData;
     if (widget.leading != null)
